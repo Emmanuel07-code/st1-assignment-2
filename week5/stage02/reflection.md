@@ -1,11 +1,11 @@
 # Stage 2 Reflection
 
-Before using AI, I wrote 10 functional requirements, 5 non-functional requirements, 6 user stories and acceptance criteria based on the SmartCare case study. I identified stakeholders, defined scope and labelled uncertain features as provisional.
+Before using AI I wrote out the requirements based on what the case study said. I came up with 10 things the system should do, 5 quality requirements, and 6 user stories. I also worked out who the stakeholders are and what's in scope versus what isn't.
 
-Copilot's review caught several gaps I had missed. It pointed out that FR-01 and FR-04 do not define what "name" means or how the ID is generated. It flagged that FR-03's search behaviour (exact, partial or case-insensitive) is undefined, and that FR-06 implies conflict checking but no appointment duration exists to check against. It also noted that NFR-02 says "responsive" without giving a measurable target, which makes it untestable.
+When I sent the requirements to Copilot for review it found some gaps I'd missed. Like FR-01 doesn't say what "name" means (first name? full name?) or how the ID gets created. FR-03 doesn't say if searching by name is exact match or partial. And it pointed out that FR-06 talks about checking for conflicts but there's no appointment duration defined anywhere, so how do you actually check?
 
-Copilot did not invent new features, which matched the prompt. However, its cross-requirement observation about FR-08 versus FR-09 and FR-10 was an assumption requiring validation: the brief says to retain cancelled appointments but does not say whether to display them on schedules.
+Copilot didn't make up new features which is good because that's what I told it not to do. But it did raise a question about FR-08 versus FR-09 and FR-10: the requirements say to keep cancelled appointments but don't say whether they should show up on the doctor's daily schedule or not. That's something we'd need to ask the client.
 
-After the review, I modified FR-01 and FR-04 by adding assumptions about ID generation, and I accepted the search-behaviour and time-format gaps as open questions for a later stage.
+After the review I added some of these gaps to the assumptions section. The search behaviour and time format ones I'm leaving as open questions for when we actually start coding.
 
-Requirements need evidence because AI generates plausible suggestions from patterns, not from this client's actual needs. Without evidence, a requirement could waste development time on something nobody asked for.
+Requirements need evidence because if you just go with whatever sounds good you might waste time building something nobody actually asked for.
