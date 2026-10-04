@@ -21,7 +21,7 @@ print(f"Patient: {patient2_name} | Practitioner: {practitioner2_name} | Time: {a
 appointments = []
 
 def book_appointment(patient_name, practitioner_name, appointment_time):
-    if not patient_name:
+    if not patient_name or not str(patient_name).strip():
         raise ValueError("Patient name cannot be empty")
     appointment = {
         "patient": patient_name,
@@ -42,3 +42,9 @@ book_appointment('Alice Smith', 'Dr. John Doe', '2024-07-20 10:00 AM')
 book_appointment('Bob Johnson', 'Dr. Jane Roe', '2024-07-20 11:30 AM')
 display_appointments()
 
+# Part G check: a name made only of spaces should now be rejected
+try:
+    book_appointment('   ', 'Dr. John Doe', '2024-07-20 12:00 PM')
+    print("Spaces-only name was ACCEPTED (change did not work)")
+except ValueError as error:
+    print("Spaces-only name rejected:", error)
